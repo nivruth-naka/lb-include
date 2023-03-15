@@ -12,7 +12,7 @@ export class Main extends Entity {
     scale: 0,
     id: true,
     primaryKey: true,
-    postgresql: {columnName: 'id', dataType: 'bigint', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
+    postgresql: {primaryKey: true, columnName: 'id', dataType: 'bigint', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
   })
   id: number;
 
