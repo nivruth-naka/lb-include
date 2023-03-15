@@ -1,10 +1,11 @@
 import {Getter, inject} from '@loopback/core';
-import {DefaultCrudRepository, HasOneRepositoryFactory, repository} from '@loopback/repository';
+import {HasOneRepositoryFactory, repository} from '@loopback/repository';
 import {TransRepository} from '.';
 import {LbIncludeDatasource} from '../datasources';
 import {Main, MainRelations, Trans} from '../models';
+import {SequelizeCrudRepository} from '@loopback/sequelize';
 
-export class MainRepository extends DefaultCrudRepository<
+export class MainRepository extends SequelizeCrudRepository<
   Main,
   typeof Main.prototype.id,
   MainRelations
