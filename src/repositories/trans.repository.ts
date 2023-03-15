@@ -1,9 +1,9 @@
 import {inject} from '@loopback/core';
-import {DefaultCrudRepository} from '@loopback/repository';
 import {LbIncludeDatasource} from '../datasources';
 import {Trans, TransRelations} from '../models';
+import {SequelizeCrudRepository} from '@loopback/sequelize';
 
-export class TransRepository extends DefaultCrudRepository<
+export class TransRepository extends SequelizeCrudRepository<
   Trans,
   typeof Trans.prototype.id,
   TransRelations
