@@ -6,12 +6,12 @@ import {Main} from './main.model';
 })
 export class Trans extends Entity {
   @property({
-    primaryKey: true,
     type: 'number',
     required: true,
     hidden: true,
     scale: 0,
-    id: 1,
+    id: true,
+    primaryKey: true,
     postgresql: {columnName: 'id', dataType: 'bigint', dataLength: null, dataPrecision: null, dataScale: 0, nullable: 'NO'},
   })
   id: number;
