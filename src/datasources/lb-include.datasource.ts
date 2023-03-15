@@ -1,7 +1,15 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
-import * as config from './lb-include.json';
 import {SequelizeDataSource} from '@loopback/sequelize';
 
+const config = {
+  name: 'lbInclude',
+  connector: 'postgresql',
+  host: 'DB1SQLD01',
+  port: 5432,
+  user: 'user',
+  password: 'secret',
+  database: 'postgres',
+};
 
 // Observe application's life cycle to disconnect the datasource when
 // application is stopped. This allows the application to be shut down
