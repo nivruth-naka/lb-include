@@ -6,6 +6,7 @@ import {Main} from './main.model';
 })
 export class Trans extends Entity {
   @property({
+    primaryKey: true,
     type: 'number',
     required: true,
     hidden: true,
