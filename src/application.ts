@@ -16,24 +16,24 @@ export class LbIncludeApplication extends BootMixin(ServiceMixin(RepositoryMixin
   constructor(options : ApplicationConfig = {}) {
     super(options);
 
-    var dbcert = process.env.DB_CERT;
-    let ca = '';
-    // console.log('DB_CERT: ', dbcert);
-    if (dbcert) { // @ts-ignore
-      ca = Buffer.from(dbcert, 'base64');
-      // console.log('ca: ', ca);
-    }
+//     var dbcert = process.env.DB_CERT;
+//     let ca = '';
+//     // console.log('DB_CERT: ', dbcert);
+//     if (dbcert) { // @ts-ignore
+//       ca = Buffer.from(dbcert, 'base64');
+//       // console.log('ca: ', ca);
+//     }
 
-    this.bind('datasources.config.lbInclude').to({
-      name: 'gen_pg',
-      connector: 'postgresql',
-      url: process.env.DB_CONNECTION_STRING,
-      ssl: {
-        ca,
-        rejectUnauthorized: false
-      }
-    });
-    this.bind('datasources.lbInclude').toClass(LbIncludeDatasource);
+//     this.bind('datasources.config.lbInclude').to({
+//       name: 'gen_pg',
+//       connector: 'postgresql',
+//       url: process.env.DB_CONNECTION_STRING,
+//       ssl: {
+//         ca,
+//         rejectUnauthorized: false
+//       }
+//     });
+//     this.bind('datasources.lbInclude').toClass(LbIncludeDatasource);
 
     // Set up the custom sequence
     this.sequence(MySequence);
