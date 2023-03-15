@@ -25,7 +25,7 @@ export class LbIncludeApplication extends BootMixin(ServiceMixin(RepositoryMixin
     }
 
     this.bind('datasources.config.lbInclude').to({
-      name: 'sov_gen_pg',
+      name: 'gen_pg',
       connector: 'postgresql',
       url: process.env.DB_CONNECTION_STRING,
       ssl: {
